@@ -1,0 +1,249 @@
+Assignment 1
+
+Javier Pascal A0137595
+
+OmegaUp: Pasdian
+
+Ejercicio 1:
+
+#include<stdio.h> 
+/* 
+Program to print:
+
+ What is the difference between a ' and a "? Or between a " and a \"?
+
+One is what we see when we're typing our program. The other is what appears on the "console."
+
+*/
+
+int main() {
+printf("What is the difference between\na ' and a \"? Or between a \" and a \\\"?\nOne is what we see when we're typing our program.\nThe other is what appears on the \"console.\"");
+return 0;
+}
+
+
+Ejercicio 2:
+
+
+#include<stdio.h> 
+/* 
+Program to print:
+
+/ \ // \\ /// \\\
+
+*/
+
+int main() {
+    
+    printf("/ \\ // \\\\ /// \\\\\\");
+    return 0;
+}
+
+
+Ejercicio 3:
+
+
+#include<stdio.h> 
+/* 
+Program to print:
+
+//////////////////////
+|| Victory is mine! ||
+\\\\\\\\\\\\\\\\\\\\\\
+
+*/
+
+int main() {
+    
+    printf("//////////////////////\n|| Victory is mine! ||\n\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\");
+    return 0;
+}
+
+
+Ejercicio 4:
+
+
+#include<stdio.h> 
+/* 
+Program to print:
+
+   \/
+  \\//
+ \\\///
+ ///\\\
+  //\\
+   /\
+
+
+*/
+
+int main() {
+    
+    printf("   \\/\n  \\\\//\n \\\\\\///\n ///\\\\\\\n  //\\\\\n   /\\");
+    return 0;
+}
+
+
+
+Ejercicio 5:
+
+
+
+#include<stdio.h> 
+/* 
+Program to print:
+
+//////////////////////
+|| Victory is mine! ||
+\\\\\\\\\\\\\\\\\\\\\\
+|| Victory is mine! ||
+\\\\\\\\\\\\\\\\\\\\\\
+|| Victory is mine! ||
+\\\\\\\\\\\\\\\\\\\\\\
+|| Victory is mine! ||
+\\\\\\\\\\\\\\\\\\\\\\
+|| Victory is mine! ||
+\\\\\\\\\\\\\\\\\\\\\\
+
+*/
+
+int main() {
+    int i;
+
+    printf("//////////////////////\n");
+    for (i = 0; i < 5; i++)
+    {
+        victory();
+        bSlash();
+
+    }
+    
+    return 0;
+}
+
+int victory() {
+    
+    printf("|| Victory is mine! ||\n");
+    return 0;
+}
+
+int bSlash(){
+
+    printf("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n");
+    return 0;
+
+}
+
+
+
+Ejercicio 6:
+
+
+#include<stdio.h> 
+/* 
+Program to print:
+
+A "quoted" String is
+'much' better if you learn
+the rules of "escape sequences."
+Also, "" represents an empty String.
+Don't forget: use \" instead of " !
+'' is not the same as "
+
+*/
+
+int main() {
+
+    printf("A \"quoted\" String is\n'much' better if you learn\nthe rules of \"escape sequences.\"\nAlso, \"\" represents an empty String.\nDon't forget: use \\\" instead of \" !\n'' is not the same as \"\n");
+    return 0;
+}
+
+
+
+Ejercicio 7:
+
+
+
+#include<stdio.h> 
+/* 
+Program to print:
+
+  _______
+ /       \
+/         \
+-"-'-"-'-"-
+\         /
+ \_______/
+
+*/
+
+int main() {
+
+    printf("  _______\n");
+    printf(" /       \\\n");
+    printf("/         \\\n");
+    printf("-\"-\'-\"-\'-\"-\n");
+    printf("\\         /\n");
+    printf(" \\_______/\n");
+    return 0;
+}
+
+
+
+Ejercicio 8:
+
+
+
+#include<stdio.h> 
+/* 
+Program to print:
+
+#include "stdio.h"
+
+
+int main(void) {
+printf("Hello World\n");
+return 0;
+}
+
+*/
+
+int main() {
+
+    printf("#include \"stdio.h\"\n");
+    printf("\n");
+    printf("\n");
+    printf("int main(void) {\n");
+    printf("printf(\"Hello World\\n\");\n");
+    printf("return 0;\n");
+    printf("}");
+    return 0;
+}
+
+
+
+Ejercicio 9:
+
+
+#include<stdio.h> 
+/* 
+Program to print:
+There's one thing every coder must understand:
+The printf command.
+
+There's one thing every coder must understand:
+The printf command.
+*/
+
+int main() {
+    
+    understand();
+    printf("\n");
+    understand("");
+}
+
+int understand(){
+
+    printf("There's one thing every coder must understand:\nThe printf command.\n");
+    return 0;
+}

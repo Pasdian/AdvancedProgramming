@@ -1,0 +1,784 @@
+#include "stdio.h"
+
+/* 
+Write code to read an integer from the user, then print even if that number is an even number
+ or odd otherwise. You may assume that the user types a valid integer. The input/output should match the following example:
+
+14      even
+ */
+
+int main()
+{
+    int num;
+    scanf("%d", &num);
+
+    if (num % 2 == 0)
+    {
+        printf("even");
+    }
+    else
+    {
+        printf("odd");
+    }
+
+    return 0;
+}
+
+
+B)
+
+#include "stdio.h"
+
+/*
+DONE
+
+ For example, the six factors of 12 are 1, 2, 3, 4, 6, and 12, so the call countFactors(12) should return 6.
+*/
+
+int countFactors(int n)
+{
+
+    unsigned int i = 1;
+    int num = 0;
+
+    while (i * i < n)
+    {
+        if (n % i == 0)
+        {
+            num += 2;
+        }
+        i++;
+    }
+    if (i * i == n)
+    {
+        num++;
+    }
+
+    return num;
+}
+
+int main()
+{
+    int num;
+    scanf("%d", &num);
+    printf("%d", countFactors(num));
+
+    return 0;
+}
+
+C)
+
+#include "stdio.h"
+
+/* 
+Done
+
+Write a complete program with a function that returns the median
+(middle) of three integer values. Read the three values from console.
+
+
+*/
+
+
+
+int main()
+{
+    int a, b, c;
+    scanf("%d\n", &a);
+    scanf("%d\n", &b);
+    scanf("%d", &c);
+
+    a > b ? (a > c ? (b > c ? printf("%d", b) : printf("%d", c)): printf("%d", a)) : (
+        b > c ? (a > c ? printf("%d", a) : printf("%d", c)) : printf("%d", b));
+
+    return 0;
+}
+
+D)
+
+#include "stdio.h"
+
+/* 
+Done
+
+Assume that months are specified as an integer between 1 and 12 (1 for January, 2 for February, and so on)
+ and that the day of the month is a number between 1 and 31. 
+
+ If the date falls between 12/16 and 3/15, you should print "Winter".
+
+  If the date falls between 3/16 and 6/15, you should print "Spring". 
+
+ If the date falls between 6/16 and 9/15, you should print "Summer". 
+
+ And if the date falls between 9/16 and 12/15, you should print "Fall".
+
+
+*/
+
+
+
+int main()
+{
+    int month, day;
+    scanf("%d\n", &month);
+    scanf("%d", &day);
+
+    (month < 3 || (month == 3 && day <= 15)) ? printf("Winter") :
+    (month < 6 || (month == 6 && day <= 15)) ? printf("Spring") :
+    (month < 9 || (month == 9 && day <= 15)) ? printf("Summer") :
+    (month < 12 || (month == 12 && day <= 15)) ? printf("Fall") :
+    printf("Winter");
+
+   
+
+    return 0;
+}
+
+E)
+
+#include "stdio.h"
+
+/* 
+Done
+
+Print an increasing sequence if the first argument is smaller than the second;
+ otherwise, print a decreasing sequence. If the two numbers are the same, that number should be printed by itself.
+
+
+*/
+
+int main()
+{
+    int a, b;
+    scanf("%d\n", &a);
+    scanf("%d", &b);
+
+    if (a < b)
+    {
+        for (int i = a; i <= b; i++)
+        {
+            printf("%d ", i);
+        }
+    }
+    else
+    {
+        for (int j = a; j >= b; j--)
+        {
+            printf("%d ", j);
+        }
+    }
+
+    return 0;
+}
+
+F)
+
+#include "stdio.h"
+
+/* 
+Done
+
+
+xooox
+oxoxo
+ooxoo
+oxoxo
+xooox
+
+
+*/
+
+void xo(int size)
+{
+    for (int rows = 1; rows <= size; rows++)
+    {
+        for (int cols = 1; cols <= size; cols++)
+        {
+            if (rows == cols)
+            {
+                printf("x");
+            }
+            else if (cols == size - rows + 1)
+            {
+                printf("x");
+            }
+            else
+            {
+                printf("o");
+            }
+        }
+        printf("\n");
+    }
+}
+
+int main()
+{
+    int a;
+    scanf("%d\n", &a);
+    xo(a);
+    
+
+    return 0;
+}
+
+G)
+
+ #include "stdio.h"
+
+/* 
+Done
+
+
+xooox
+oxoxo
+ooxoo
+oxoxo
+xooox
+
+
+*/
+
+void xo(int size)
+{
+    for (int rows = 1; rows <= size; rows++)
+    {
+        for (int cols = 1; cols <= size; cols++)
+        {
+            if (rows == cols)
+            {
+                printf("x");
+            }
+            else if (cols == size - rows + 1)
+            {
+                printf("x");
+            }
+            else
+            {
+                printf("o");
+            }
+        }
+        printf("\n");
+    }
+}
+
+int main()
+{
+    int a;
+    scanf("%d\n", &a);
+    xo(a);
+    
+
+    return 0;
+}
+
+H)
+
+#include "stdio.h"
+
+/* 
+Done
+
+
+A "perfect number" is a positive integer that is the sum of all its proper factors 
+(that is, factors including 1 but not the number itself). The first two perfect 
+numbers are 6 and 28, since 1+2+3=6 and 1+2+4+7+14=28. Write a complete program 
+with a function perfectNumbers that takes an integer max as an argument and prints 
+out all perfect numbers that are less than or equal to max.
+
+Here is the console output from a call to perfectNumbers(6): Perfect numbers up to 6: 6
+
+# Entrada
+
+n1 integer
+
+
+
+
+*/
+
+int main()
+{
+    int max;
+    scanf("%d", &max);
+
+    printf("Perfect numbers up to %d:", max);
+
+    for (int i = 1; i <= max; i++)
+    {
+        int sum = 0;
+        for (int j = 1; j < i; j++)
+        {
+            if (i % j == 0)
+            {
+                sum = sum + j;
+            }
+        }
+        if (sum == i)
+        {
+            printf(" %d ", i);
+        }
+    }
+
+    return 0;
+}
+
+J)
+
+#include "stdio.h"
+
+/* 
+Done
+
+Write a complete program with a function called zeroDigits that accepts an integer 
+parameter and returns the number of digits in the number that have the value 0. 
+For example, the call zeroDigits(5024036) should return 2, and zeroDigits(743) should return 0. 
+The call zeroDigits(0) should return 1. You may assume that the integer is non-negative.
+
+# Entrada
+
+n1 integer
+
+
+
+
+*/
+
+int main()
+{
+    int num;
+    scanf("%d", &num);
+
+    int i = 0;
+
+    do
+    {
+        if (num % 10 == 0)
+        {
+            i++;
+        }
+        num /= 10;
+        
+    } while (num > 0);
+
+    printf("%d", i);
+    
+
+    return 0;
+}
+
+K)
+
+#include "stdio.h"
+
+/* 
+Done
+
+Write a complete program with a function called zeroDigits that accepts an integer 
+parameter and returns the number of digits in the number that have the value 0. 
+For example, the call zeroDigits(5024036) should return 2, and zeroDigits(743) should return 0. 
+The call zeroDigits(0) should return 1. You may assume that the integer is non-negative.
+
+# Entrada
+
+n1 integer
+
+
+
+
+*/
+
+int main()
+{
+    int num;
+    scanf("%d", &num);
+
+    int count = 0;
+    int copy = num;
+
+    while (copy % 2 == 0)
+    {
+        count++;
+        copy /= 2;
+    }
+
+    printf("%d = ", num);
+
+    for (int i = 0; i < count; i++)
+    {
+        printf("2 * ");
+    }
+    printf("%d", copy);
+
+    return 0;
+}
+
+L)
+
+#include "stdio.h"
+
+/* 
+Done
+
+En tu clase de matemáticas te enseñaron el algoritmo de Euclides (para calcular el  de dos números),
+ y de tarea te pidieron que para un número , calculases , siendo esta función, la cantidad de números
+  menores o iguales a , cuyo .
+
+# Entrada
+
+n1 integer
+
+
+
+
+*/
+
+int gcd(int a, int b)
+{
+    int temp, gcd;
+    if (a == 0)
+    {
+        return b;
+    }
+    else if (b == 0)
+    {
+        return a;
+    }
+    else
+    {
+        while (b != 0)
+        {
+            temp = b;
+            b = a % b;
+            a = temp;
+        }
+        gcd = a;
+        return gcd;
+    }
+}
+
+int gcdOnes(int n)
+{
+    if (n > 1000000 || n <= 0)
+    {
+        return 0;
+    }
+    int ones = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        if (gcd(n, i) == 1)
+        {
+            ones++;
+        }
+    }
+    return ones;
+}
+
+int main()
+{
+    int num;
+    scanf("%d", &num);
+    printf("%d", gcdOnes(num));
+
+    return 0;
+}
+
+
+M)
+
+#include "stdio.h"
+
+/* 
+Done
+
+En tu clase de matemáticas te enseñaron el algoritmo de Euclides (para calcular el  de dos números),
+ y de tarea te pidieron que para un número , calculases , siendo esta función, la cantidad de números
+  menores o iguales a , cuyo .
+
+# Entrada
+
+n1 integer
+
+
+
+
+*/
+
+void hopScotch(int n)
+{
+    int i = 1;
+    int max = (3 * n) + i;
+    while (i <= max)
+    {
+        if (i % 3 == 1)
+        {
+            printf("   %d\n", i);
+        }
+        else if (i % 3 == 0)
+        {
+            printf("     %d\n", i);
+        }
+        else
+        {
+            printf("%d", i);
+        }
+        i++;
+    }
+}
+
+int main()
+{
+    int num;
+    scanf("%d", &num);
+    hopScotch(num);
+
+    return 0;
+}
+
+N)
+
+#include "stdio.h"
+#include <stdbool.h>
+
+/* 
+Done
+
+If one of the integers is the midpoint
+
+# Entrada
+
+n1 integer
+n2 integer
+n3 integer
+
+4,6,8 true
+
+3,1,3 false
+
+
+*/
+
+bool hasMidPoint(int a, int b, int c)
+{
+
+    if (a == b || a == c || b == c)
+    {
+        printf("false");
+        return false;
+    }
+    int top, bot;
+
+    // A is top and define bot
+    if (a > b && a > c)
+    {
+        top = a;
+        if (b > c)
+        {
+            bot = c;
+        }
+        else
+        {
+            bot = b;
+        }
+    }
+    // b is top
+    else if (b > a && b > c)
+    {
+        top = b;
+        if (a > c)
+        {
+            bot = c;
+        }
+        else
+        {
+            bot = a;
+        }
+    }
+    // c is top
+    else
+    {
+        top = c;
+        if (b > a)
+        {
+            bot = a;
+        }
+        else
+        {
+            bot = b;
+        }
+    }
+    if ((top - bot) % 2 != 0)
+    {
+        printf("false");
+        return false;
+    }
+
+    int distance = (top - bot) / 2;
+
+    int midPoint  = bot + distance;
+
+    if (a == midPoint || b == midPoint || c == midPoint )
+    {
+        printf("true");
+        return true;
+    }
+    
+}
+
+int main()
+{
+    int a, b, c;
+    scanf("%d\n", &a);
+    scanf("%d\n", &b);
+    scanf("%d", &c);
+    hasMidPoint(a, b, c);
+
+    return 0;
+}
+
+O)
+
+#include "stdio.h"
+#include "math.h"
+
+/* 
+Done
+
+For example, digitSum(29107) returns 2+9+1+0+7 or 19.
+
+# Entrada
+
+n1 integer
+
+
+sum of Digits
+
+
+*/
+
+int main()
+{
+    int a;
+    scanf("%d", &a);
+    int sum = 0, copy = abs(a);
+
+    while (copy != 0)
+    {
+        int rem = copy % 10;
+        sum += rem;
+        
+        copy /= 10;
+    }
+    printf("%d", sum);
+
+    return 0;
+}
+
+
+P)
+
+#include "stdio.h"
+#include "math.h"
+
+/* 
+Done
+
+For example, digitSum(29107) returns 2+9+1+0+7 or 19.
+
+# Entrada
+
+n1 integer
+
+
+sum of Digits
+
+
+*/
+
+int digitSum(int n)
+{
+    if (n < 10 && n > -10)
+    {
+        printf("1");
+        return 0;
+    }
+    else
+    {
+        int min = 0, max = 0, copy = abs(n), digitSum = 0;
+
+        int rem = copy % 10;
+        min = rem;
+        max = rem;
+
+        while (copy != 0)
+        {
+
+            int currentDigit = copy % 10;
+            if (currentDigit > max)
+            {
+                max = currentDigit;
+            }
+            if (currentDigit < min)
+            {
+                min = currentDigit;
+            }
+
+            copy /= 10;
+        }
+        digitSum = max - min + 1;
+        printf("%d", digitSum);
+        return 0;
+    }
+}
+
+int main()
+{
+    int a;
+    scanf("%d", &a);
+    digitSum(a);
+    return 0;
+}
+
+
+Q)
+
+#include "stdio.h"
+#include "math.h"
+
+/* 
+Done
+
+For example, digitSum(29107) returns 2+9+1+0+7 or 19.
+
+# Entrada
+
+n1 integer
+
+
+sum of Digits
+
+
+*/
+
+int swapDigitPairs(int n){
+    int res = 0, spot = 1;
+    while (n > 9)
+    {
+        res += spot * 10 * (n % 10);
+        n /= 10;
+        res += spot * (n % 10);
+        n /= 10;
+        spot *= 100;
+    }
+    printf("%d", res + spot * n);
+    return 0;
+    
+
+}
+
+int main()
+{
+    int a;
+    scanf("%d", &a);
+    swapDigitPairs(a);
+    return 0;
+}

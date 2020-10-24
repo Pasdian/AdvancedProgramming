@@ -1,0 +1,379 @@
+#include "stdio.h"
+
+void printer(double x, double y)
+{
+    printf("x = %.2f and y = %.2f \n", x, y);
+}
+
+int main()
+{
+
+    double y = 867.5309;
+    int z = 5;
+    double x = 10.01;
+    printer(x, 8.0);
+    printf("x = %.2f and y = %.4f \n", x, y);
+    printf("The value from main is: %.4f\n", y);
+    printf("z = %d", z);
+
+
+    return 0;
+}
+B
+#include "stdio.h"
+
+/* 
+Done
+
+5
+Mexico
+
+MexicoMexicoMexicoMexicoMexico
+
+
+*/
+
+void printStrings(int x, char word[20])
+{
+    for (int i = 0; i < x; i++)
+    {
+        printf("%s",word);
+    }
+    
+}
+
+int main()
+{
+    int number;
+    scanf("%d\n", &number);
+    char str[20];
+    scanf("%[^\n]%*c", str);
+    printStrings(number, str);
+    
+
+    return 0;
+}
+
+c
+
+#include "stdio.h"
+
+/*
+DONE
+
+ Body temp in C is: 37.0 
+ 
+ */
+
+
+double ftoc(double tempf, double tempc) {
+    return (tempf - 32.0) * (5.0 / 9.0);
+}
+
+int main() {
+
+double tempf = 98.6;
+double tempc = 0.0;
+double final = ftoc(tempf, tempc);
+printf("Body temp in C is: %.1f", final);
+
+return 0;
+}
+
+D
+
+#include "stdio.h"
+
+/* 
+Done
+
+Write a complete program which gets three integers from the user console and call a function min
+ that takes three integers as parameters and returns the smallest of the three values, such that 
+ a call of min(3, -2, 7) would return -2, and a call of min(19, 27, 6) would return 6. User the 
+ ternary operator "? :" to implement your min function.
+
+
+*/
+
+
+
+int main()
+{
+    int a, b, c;
+    scanf("%d\n", &a);
+    scanf("%d\n", &b);
+    scanf("%d", &c);
+
+    (a > b) ? ((b > c) ? printf("%d", c) : printf("%d", b)) : ((a > c) ? printf("%d", c) : printf("%d", a));
+
+
+    return 0;
+}
+
+
+f
+
+#include "stdio.h"
+
+/* 
+Done
+
+n times 2 = 2n
+
+
+*/
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+
+    printf("%d times 2 = %d", n, n * 2);
+
+    return 0;
+}
+
+g
+
+#include "stdio.h"
+
+/* 
+Partial
+
+low? high? sum = 55
+
+
+*/
+
+int main()
+{
+    int low, high, result = 0;
+    scanf("%d\n", &low);
+    scanf("%d", &high);
+
+    for (int i = 0; i <= high; i++)
+    {
+        result += i;
+    }
+
+    printf("low? high? sum = %d", result);
+
+    return 0;
+}
+
+h
+#include "stdio.h"
+
+/*
+DONE
+
+low? high? sum = 55
+
+*/
+
+void printNumbers(int n) {
+
+     for (int i = 1; i <= n; i++)
+    {
+        printf("[%d]", i);
+        printf(" ");
+    }
+
+}
+
+int main()
+{
+    int high;
+    scanf("%d", &high);
+    printNumbers(high);
+
+    return 0;
+}
+
+#include "stdio.h"
+#include <math.h>
+
+
+/*
+DONE
+
+low? high? sum = 55
+
+*/
+
+void toPower(double n) {
+
+     for (double i = 0; i <= n; i++)
+    {
+        printf("%0.lf ", pow(2, i));
+    }
+
+}
+
+int main()
+{
+    double high;
+    scanf("%lf", &high);
+    toPower(high);
+
+    return 0;
+}
+
+#include "stdio.h"
+#include <math.h>
+
+
+/*
+DONE
+
+n1^n2-1....n1^n2
+
+*/
+
+void printPowersOfN(double base, double exp) {
+
+     for (double i = 0; i <= exp; i++)
+    {
+        printf("%0.lf ", pow(base, i));
+    }
+
+}
+
+int main()
+{
+    double base, pow;
+    scanf("%lf\n", &base);
+    scanf("%lf", &pow);
+
+    printPowersOfN(base, pow);
+
+    return 0;
+}
+
+
+K
+
+#include "stdio.h"
+#include <math.h>
+
+/*
+DONE
+
+12345
+23451
+34512
+45123
+51234
+
+*/
+
+void printSquare(double min, double max)
+{
+
+    for (int i = min; i <= max; i++)
+    {
+        for (int j = i; j <= max; j++)
+        {
+            printf("%d", j);
+        }
+        for (int k = min; k < i; k++)
+        {
+            printf("%d", k);
+        }
+        printf("\n");
+    }
+}
+
+int main()
+{
+    double min, max;
+    scanf("%lf\n", &min);
+    scanf("%lf", &max);
+
+    printSquare(min, max);
+
+    return 0;
+}
+
+
+lf
+
+#include "stdio.h"
+#include <math.h>
+
+/*
+DONE
+
+12345
+23451
+34512
+45123
+51234
+
+*/
+
+void printGrid(double rows, double cols)
+{
+    int count = 0;
+
+    for (int i = 1; i <= rows; i++)
+    {
+        count = i;
+        for (int j = 1; j <= cols; j++)
+        {
+            printf("%d", count);
+            if (j != cols)
+            {
+                printf(", ");
+                        }
+                        count += rows;
+            
+                }
+                printf("\n");
+    }
+}
+
+int main()
+{
+    double rows, cols;
+    scanf("%lf\n", &rows);
+    scanf("%lf", &cols);
+
+    printGrid(rows, cols);
+
+    return 0;
+}
+
+
+M
+#include "stdio.h"
+#include <stdlib.h>
+
+/*
+DONE
+
+12345
+23451
+34512
+45123
+51234
+
+*/
+
+void largerAbsVal(int a, int b)
+{
+    (abs(a) > abs(b)) ? printf("%d", abs(a)) : printf("%d", abs(b));
+
+}
+
+int main()
+{
+    double a, b;
+    scanf("%lf\n", &a);
+    scanf("%lf", &b);
+
+    largerAbsVal(a, b);
+
+    return 0;
+}
+

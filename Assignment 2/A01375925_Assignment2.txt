@@ -1,0 +1,676 @@
+A
+#include <stdio.h>
+/* 
+TO-DO
+
+   /\       /\       /\       /\
+  /  \     /  \     /  \     /  \
+ /    \   /    \   /    \   /    \
++------+ +------+ +------+ +------+
+|      | |      | |      | |      |
+|      | |      | |      | |      |
++------+ +------+ +------+ +------+
+| Viva | | Viva | | Viva | | Viva |
+|Mexico| |Mexico| |Mexico| |Mexico|
++------+ +------+ +------+ +------+
+|      | |      | |      | |      |
+|      | |      | |      | |      |
++------+ +------+ +------+ +------+
+   /\       /\       /\       /\
+  /  \     /  \     /  \     /  \
+ /    \   /    \   /    \   /    \
+
+
+*/
+
+void top(int select)
+{
+    switch (select)
+    {
+    case 1:
+        printf("   /\\   ");
+        break;
+    case 2:
+        printf("  /  \\  ");
+        break;
+    case 3:
+        printf(" /    \\ ");
+        break;
+    default:
+        break;
+    }
+}
+void square(int select)
+{
+    switch (select)
+    {
+    case 1:
+        printf("+------+");
+        break;
+    case 2:
+        printf("|      |");
+        break;
+    case 3:
+        printf("|      |");
+        break;
+    default:
+        printf("+------+");
+        break;
+    }
+}
+
+void mex(int select)
+{
+    switch (select)
+    {
+    case 1:
+        printf("| Viva |");
+        break;
+    case 2:
+        printf("|Mexico|");
+        break;
+    default:
+        break;
+    }
+}
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    for (int i = 1; i <= 16; i++)
+    {
+        for (int k = 0; k < n; k++)
+        {
+            switch (i)
+            {
+            case 1:
+                top(1);
+                break;
+            case 2:
+                top(2);
+                break;
+            case 3:
+                top(3);
+                break;
+            case 4:
+                square(1);
+                break;
+            case 5:
+                square(2);
+                break;
+            case 6:
+                square(3);
+                break;
+            case 7:
+                square(4);
+                break;
+            case 8:
+                mex(1);
+                break;
+            case 9:
+                mex(2);
+                break;
+            case 10:
+                square(1);
+                break;
+            case 11:
+                square(2);
+                break;
+            case 12:
+                square(3);
+                break;
+            case 13:
+                square(4);
+                break;
+            case 14:
+                top(1);
+                break;
+            case 15:
+                top(2);
+                break;
+            case 16:
+                top(3);
+                break;
+
+            default:
+                break;
+            }
+            printf(" ");
+        }
+        printf("\n");
+    }
+}
+
+B
+#include<stdio.h> 
+/* 
+done
+2 times 1 = 2
+2 times 2 = 4
+2 times 3 = 6
+2 times 4 = 8
+
+*/
+
+int main() {
+    int i;
+
+  for (i = 1; i < 5; ++i)
+  {
+      int var = i*2;
+      printf("2 times %d = %d\n", i, var);
+  }
+  return 0;
+}
+C
+#include<stdio.h> 
+/* 
+done
+359
+9874
+5687941   
+
+359
+874
+941
+
+*/
+ 
+int main()
+{
+    int number, lastThree;
+ 
+    scanf("%d", &number);
+    lastThree = number % 1000;
+    printf("%d", lastThree);
+    return 0;
+}
+D
+#include<stdio.h> 
+/* 
+done
+uuuuu
+uuuuu
+uuuuu
+uuuuu
+
+*/
+ 
+int main()
+{
+    int i;
+    char str[5] = "uuuuu";
+
+    for (i = 1; i < 5; ++i)
+    {
+        
+        printf("%s\n", str);
+    }
+    return 0;
+}
+E
+#include<stdio.h> 
+/* 
+done
+40 chars long
+
+----------------------------------------
+_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-_-^-
+1122334455667788990011223344556677889900
+----------------------------------------
+
+*/
+ 
+int main()
+{
+    int i;
+    int j = 0;
+    char dash = '-';
+    char draw[5] = "_-^-";
+
+
+    for (i = 0; i < 40; ++i)
+    { 
+        printf("%c", dash);
+    }
+
+    printf("\n");
+
+    for (i = 0; i < 10; ++i)
+    { 
+        printf("%s", draw);
+    }
+    printf("\n");
+
+    for (i = 1; i < 21; ++i)
+    { 
+        j++;
+        if (j == 10)
+        {
+            j = 0;
+        }
+        
+        printf("%d%d", j,j);
+    }
+
+    printf("\n");
+
+    for (i = 0; i < 40; ++i)
+    { 
+        printf("%c", dash);
+    }
+    
+    return 0;
+}
+F
+#include<stdio.h> 
+/* 
+done
+
+000111222333444555666777888999
+000111222333444555666777888999
+000111222333444555666777888999
+
+*/
+ 
+int main()
+{
+    int i;
+    int j;
+
+
+    for (i = 0; i < 3; ++i)
+    { 
+        for (j = 0; j < 10; j++)
+        {
+            printf("%d%d%d", j, j, j);
+        }
+        printf("\n");
+        
+    }
+    
+    return 0;
+}
+G
+#include <stdio.h>
+/* 
+done
+-----1-----
+----333----
+---55555---
+--7777777--
+-999999999-
+
+*/
+
+int main()
+{
+    int row;
+    int col;
+    int k;
+    int l;
+    int acc = 0;
+
+    for (row = 1; row <= 10; row++)
+    {
+        if (row % 2 != 0)
+        {
+            acc++;
+
+            for (col = 5; col > row-acc; col--)
+            {
+                printf("-");
+            }
+            for (k = 1; k <= row; k++)
+            {
+                printf("%d", row);
+            }
+
+            for (l = 5; l > row-acc; l--)
+            {
+                printf("-");
+            }
+            printf("\n");
+        }
+        
+    }
+    return 0;
+}
+H
+#include <stdio.h>
+/* 
+DONE
+!!!!!!!!!!!!!!!!!!!!!!
+\\!!!!!!!!!!!!!!!!!!//
+\\\\!!!!!!!!!!!!!!////
+\\\\\\!!!!!!!!!!//////
+\\\\\\\\!!!!!!////////
+\\\\\\\\\\!!//////////
+
+*/
+
+int main()
+{
+    int row;
+    int col;
+    int k;
+    int l;
+
+    printf("!!!!!!!!!!!!!!!!!!!!!!\n");
+
+    for (row = 1; row <=3; row++)
+    {
+        for (col = 1; col <= row; col++)
+        {
+            printf("\\\\");
+        }
+        for (k = 6; k >= row*2; k--)
+        {
+            printf("!!");
+        }
+        for (l = 1; l <= row; l++)
+        {
+            printf("//");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+I
+#include <stdio.h>
+/* 
+DONE
+4
+!!!!!!!!!!!!!!
+\\!!!!!!!!!!//
+\\\\!!!!!!////
+\\\\\\!!//////
+7
+!!!!!!!!!!!!!!!!!!!!!!!!!!
+\\!!!!!!!!!!!!!!!!!!!!!!//
+\\\\!!!!!!!!!!!!!!!!!!////
+\\\\\\!!!!!!!!!!!!!!//////
+\\\\\\\\!!!!!!!!!!////////
+\\\\\\\\\\!!!!!!//////////
+\\\\\\\\\\\\!!////////////
+6
+!!!!!!!!!!!!!!!!!!!!!!
+\\!!!!!!!!!!!!!!!!!!//
+\\\\!!!!!!!!!!!!!!////
+\\\\\\!!!!!!!!!!//////
+\\\\\\\\!!!!!!////////
+\\\\\\\\\\!!//////////
+
+*/
+
+int main()
+{
+    int row;
+    int i;
+    int col;
+    int k;
+    int l;
+
+    int number;
+
+    scanf("%d", &number);
+
+    for (i = 1; i <= (number * 4) - 2; i++)
+    {
+        printf("!");
+    }
+    printf("\n");
+
+    for (row = 1; row <= (number - 1); row++)
+    {
+        for (col = 1; col <= row; col++)
+        {
+            printf("\\\\");
+        }
+        for (k = (number - 1) * 2; k >= row * 2; k--)
+        {
+            printf("!!");
+        }
+        for (l = 1; l <= row; l++)
+        {
+            printf("//");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+J
+#include <stdio.h>
+/* 
+DONE
+
+$$$$$$$**************$$$$$$$
+**$$$$$$************$$$$$$**
+****$$$$$**********$$$$$****
+******$$$$********$$$$******
+********$$$******$$$********
+**********$$****$$**********
+************$**$************
+
+*/
+
+int main()
+{
+    int row;
+    int col;
+    int k;
+    int l;
+    int m, n;
+
+    for (row = 1; row <=7; row++)
+    {
+        for (m = 2; m <= row; m++)
+        {
+            printf("**");
+        }
+        for (col = 7; col >= row; col--)
+        {
+            printf("$");
+        }
+        for (k = 7; k >= row; k--)
+        {
+            printf("**");
+        }
+        for (l = 7; l >= row; l--)
+        {
+            printf("$");
+        }
+        for (n = 2; n <= row; n++)
+        {
+            printf("**");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+K
+#include <stdio.h>
+/* 
+TO-DO
+
+   /\       /\       /\       /\
+  /  \     /  \     /  \     /  \
+ /    \   /    \   /    \   /    \
++------+ +------+ +------+ +------+
+|      | |      | |      | |      |
+|      | |      | |      | |      |
++------+ +------+ +------+ +------+
+| Viva | | Viva | | Viva | | Viva |
+|Mexico| |Mexico| |Mexico| |Mexico|
++------+ +------+ +------+ +------+
+|      | |      | |      | |      |
+|      | |      | |      | |      |
++------+ +------+ +------+ +------+
+   /\       /\       /\       /\
+  /  \     /  \     /  \     /  \
+ /    \   /    \   /    \   /    \
+
+
+*/
+
+void top(int select)
+{
+    switch (select)
+    {
+    case 1:
+        printf("   /\\   ");
+        break;
+    case 2:
+        printf("  /  \\  ");
+        break;
+    case 3:
+        printf(" /    \\ ");
+        break;
+    default:
+        break;
+    }
+}
+void square(int select)
+{
+    switch (select)
+    {
+    case 1:
+        printf("+------+");
+        break;
+    case 2:
+        printf("|      |");
+        break;
+    case 3:
+        printf("|      |");
+        break;
+    default:
+        printf("+------+");
+        break;
+    }
+}
+
+void mex(int select)
+{
+    switch (select)
+    {
+    case 1:
+        printf("| Viva |");
+        break;
+    case 2:
+        printf("|Mexico|");
+        break;
+    default:
+        break;
+    }
+}
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    for (int i = 1; i <= 16; i++)
+    {
+        for (int k = 0; k < n; k++)
+        {
+            switch (i)
+            {
+            case 1:
+                top(1);
+                break;
+            case 2:
+                top(2);
+                break;
+            case 3:
+                top(3);
+                break;
+            case 4:
+                square(1);
+                break;
+            case 5:
+                square(2);
+                break;
+            case 6:
+                square(3);
+                break;
+            case 7:
+                square(4);
+                break;
+            case 8:
+                mex(1);
+                break;
+            case 9:
+                mex(2);
+                break;
+            case 10:
+                square(1);
+                break;
+            case 11:
+                square(2);
+                break;
+            case 12:
+                square(3);
+                break;
+            case 13:
+                square(4);
+                break;
+            case 14:
+                top(1);
+                break;
+            case 15:
+                top(2);
+                break;
+            case 16:
+                top(3);
+                break;
+
+            default:
+                break;
+            }
+            printf(" ");
+        }
+        printf("\n");
+    }
+}
+
+L
+
+#include <stdio.h>
+/* 
+DONE
+
+        |         |         |         |         |         |
+123456789012345678901234567890123456789012345678901234567890
+
+
+
+*/
+
+int main()
+{
+    int i;
+    int j;
+    int k;
+
+    printf("        ");
+    for (i = 1; i <= 5; i++)
+    {
+        printf("|");
+        printf("         ");
+        
+    }
+    printf("|");
+    printf("\n");
+    for (j = 1; j <= 6; j++)
+    {
+        for (k = 1; k < 10; k++)
+        {
+            printf("%d", k);
+        }
+        printf("0");
+    }
+    return 0;
+}

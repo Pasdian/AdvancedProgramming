@@ -1,0 +1,281 @@
+Javier Pascal Flores
+A01375925
+
+A
+
+#include "stdio.h"
+
+/* 
+
+*/
+
+
+int Palindrobits(int num) {
+    int cond = num;
+    int i = 0;
+
+    while (cond > 0) {
+        i <<= 1;
+        i |= (cond & 1);
+        cond = cond >> 1;
+    }
+    if(i == num){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+int main()
+{
+    int num;
+    scanf("%d", &num);
+    printf("%d", Palindrobits(num));
+    
+
+    return 0;
+}
+
+
+B
+
+#include "stdio.h"
+
+/*  */
+
+
+int countOnes(int num){
+    int ones = 0;
+
+    while(num != 0){
+        num &= (num -1);
+        ones ++;
+    }
+    return ones;
+}
+
+int main()
+{
+    int num;
+    scanf("%d", &num);
+    printf("%d", countOnes(num));
+    
+
+    return 0;
+}
+
+
+c
+
+
+
+#include "stdio.h"
+
+/*  */
+
+
+int countOnes(int num){
+    int ones = 0;
+
+    while(num != 0){
+        num &= (num -1);
+        ones ++;
+    }
+    return ones;
+}
+
+int compareBits(int a,int b){
+    int bitsA = countOnes(a);
+    int bitsB = countOnes(b);
+
+    if(bitsA < bitsB){
+        return -1;
+    }else if(bitsA > bitsB){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+int main()
+{
+    int a, b;
+    scanf("%d\n", &a);
+    scanf("%d", &b);
+
+    printf("%d", compareBits(a, b));
+    
+
+    return 0;
+}
+
+
+d
+
+
+#include "stdio.h"
+#include <math.h>
+
+/*  */
+
+
+int invert(int x, int p, int n){
+    int mask;
+    int pos = p;
+    int top = p + n;
+    while(pos < top){
+        mask = pow(2, pos);
+        x ^= mask;
+        pos++;
+    }
+    return x;
+}
+
+int main()
+{
+    int x, p, n;
+    scanf("%d", &x);
+    scanf("%d", &p);
+    scanf("%d", &n);
+
+    printf("%d", invert(x, p, n));
+    
+
+    return 0;
+}
+
+
+e
+
+
+
+#include "stdio.h"
+
+/*  */
+
+int circularLeftShift(unsigned long int num, unsigned int shift){
+    return (num << shift) | (num >> (32 - shift));
+}
+
+
+int main()
+{
+    unsigned long int num;
+    int shift;
+    scanf("%lu\n", &num);
+    scanf("%d", &shift);
+    printf("%u", circularLeftShift(num, shift));
+    
+
+    return 0;
+}
+
+
+
+F
+
+
+#include "stdio.h"
+
+/*  */
+
+int circularRightShift(unsigned long int num, unsigned int shift){
+    return (num >> shift) | (num << (32 - shift));
+}
+
+
+int main()
+{
+    unsigned long int num;
+    int shift;
+    scanf("%lu\n", &num);
+    scanf("%d", &shift);
+    printf("%d", circularRightShift(num, shift));
+    
+
+    return 0;
+}
+
+
+G
+
+
+#include "stdio.h"
+
+/*  */
+
+
+int swapBits(unsigned int num, unsigned int pos1, unsigned int pos2){
+    unsigned int a = (num >> pos1) & 1;
+    unsigned int b = (num >> pos2) & 1;
+    unsigned int xor = a ^ b;
+    xor = (xor << pos1) | (xor << pos2);
+    unsigned int res  =  num ^ xor;
+    return res;
+
+
+}
+
+int main()
+{
+    int num, p1, p2;
+    scanf("%d\n", &num);
+    scanf("%d\n", &p1);
+    scanf("%d", &p2);
+    printf("%d", swapBits(num, p1, p2));
+    
+
+    return 0;
+}
+
+I
+
+
+#include "stdio.h"
+
+/*  
+
+120
+86
+52
+18
+
+305419896
+
+1
+1
+1
+1
+
+1684
+
+255
+255
+255
+255
+
+4294967295
+
+*/
+
+unsigned int fourIntOne(unsigned int a, unsigned int b, unsigned int c, unsigned int d)
+{
+    unsigned oct1, oct2, oct3;
+    oct1 = a | (b << 8);
+    oct2 = oct1 | (c << 16);
+    oct3 = oct2 | (d << 24);
+    return oct3;
+}
+
+int main()
+{
+    int a, b, c, d;
+    scanf("%d\n", &a);
+    scanf("%d\n", &b);
+    scanf("%d\n", &c);
+    scanf("%d", &d);
+
+    printf("%u", fourIntOne(a, b, c, d));
+
+    return 0;
+}
