@@ -5,26 +5,24 @@ typedef enum
     Unknown
 } MinutiaType;
 
-typedef struct
-{
-    unsigned int x, y;
+typedef struct{
+    unsigned short x,y;
     float angle;
     MinutiaType type;
-} Minutia;
+}Minutia;
 
-typedef struct
-{
+typedef struct{
     Minutia *minutiae;
-    unsigned int length;
-} MinutiaArray;
+    unsigned short length;
+}MinutiaArray;
 
 // Assign and create
-Minutia *createMinutia(unsigned int x, unsigned int y, float angle, MinutiaType type);
-MinutiaArray *createMinutiaArray(unsigned int lenght);
+Minutia *createMinutia (unsigned short x, unsigned short y,float angle, MinutiaType type);
+MinutiaArray *createMinutiaArray(unsigned short lenght);
 // Release memory
-void releaseMinutiaArray(MinutiaArray *minutiaArray);
+void releaseMinutiaArray (MinutiaArray *minArr);
 // Computations
-double computeDistance(const Minutia *const minutia1, const Minutia *const minutia2);
-Minutia *findCentroid(const MinutiaArray *const minutiaArray, double (*computeDistance)(const Minutia *const minutia1, const Minutia *const minutia2));
+double computeDistance(const Minutia *const minutia1,const Minutia *const minutia2);
+Minutia *findCentroid(const MinutiaArray *const minutiaArray,double (*distance)(const Minutia *const minutia1,const Minutia *const minutia2));
 // Tests
 int testFindCentroid();
