@@ -26,5 +26,3 @@ double computeDistance(const Minutia *const minutia1,const Minutia *const minuti
 Minutia *findCentroid(const MinutiaArray *const minutiaArray,double (*distance)(const Minutia *const minutia1,const Minutia *const minutia2));
 // Tests
 int testFindCentroid();
-
-MinutiaArray sortMinutiaArray(MinutiaArray *minArr);
