@@ -218,9 +218,9 @@ int testDissimilarity()
 int testFindNearestNeighbor()
 {
     Instance *instanceA = createInstance(3);
-    instanceA->features[0] = 1;
+    instanceA->features[0] = 2;
     instanceA->features[1] = 2;
-    instanceA->features[2] = 3;
+    instanceA->features[2] = 2;
     instanceA->featureTypes[0] = 1;
     instanceA->featureTypes[1] = 0;
     instanceA->featureTypes[2] = 1;
@@ -238,9 +238,9 @@ int testFindNearestNeighbor()
     instancesArr[1] = *instanceB;
 
     Instance *query = createInstance(3);
-    query->features[0] = 1;
+    query->features[0] = 2;
     query->features[1] = 2;
-    query->features[2] = 3;
+    query->features[2] = 2;
     query->featureTypes[0] = 1;
     query->featureTypes[1] = 0;
     query->featureTypes[2] = 1;
